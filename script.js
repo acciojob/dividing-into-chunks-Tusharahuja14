@@ -4,11 +4,10 @@ const divide = (arr, n) => {
   // Write your code here
 	let res=[];
 	let temp=[];
-	for(let i=0;i<n;i++)
+	let sum=0;
+	for(let i=0;i<arr.length;i++)
 		{
 			let count=0;
-			let sum=0;
-			let j=0;
 			
 		if(sum+arr[i]<=n)
 		{
@@ -18,10 +17,14 @@ const divide = (arr, n) => {
 		else
 		{
 			res.push(temp);
+			temp=[arr[i]];
 			sum=arr[i];
-			temp=arr[i];
 		}
 		}
+	 if (temp.length > 0) {
+    res.push(temp);
+  }
+
 	return res;
 };
 
